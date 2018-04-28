@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="UserQQ" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="TestDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="View_User" EntityType="TestDataModel.View_User" />
+  </EntityContainer>
+  <EntityType Name="View_User">
+    <Key>
+      <PropertyRef Name="表名" />
+      <PropertyRef Name="标识" />
+      <PropertyRef Name="主键" />
+      <PropertyRef Name="占用字节数" />
+      <PropertyRef Name="小数位数" />
+      <PropertyRef Name="允许空" />
+      <PropertyRef Name="默认值" />
+    </Key>
+    <Property Name="表名" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="字段序号" Type="Int16" />
+    <Property Name="字段名" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="标识" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="主键" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="类型" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="占用字节数" Type="Int16" Nullable="false" />
+    <Property Name="长度" Type="Int32" />
+    <Property Name="小数位数" Type="Int32" Nullable="false" />
+    <Property Name="允许空" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="默认值" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

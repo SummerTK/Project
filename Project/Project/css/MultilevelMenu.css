@@ -1,0 +1,95 @@
+﻿.nav ul, .nav {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+}
+
+    .nav ul,
+    .nav ol,
+    .nav li {
+        list-style: none;
+    }
+
+.menu {
+    background-color: #fff;
+    position: relative;
+    font-size: 14px;
+}
+
+.nav > li {
+    display: inline-block;
+    position: relative;
+}
+
+    .nav > li > a {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 32px;
+        text-decoration: none;
+    }
+
+    .nav > li:hover > a {
+        color: #229ffd;
+    }
+
+.nav a {
+    color: #666666;
+    display: block;
+    text-decoration: none;
+}
+
+.nav ul {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    left: 15px;
+    border: 1px solid #eaeaea;
+}
+
+    .nav ul li {
+        position: relative;
+    }
+
+.nav > li:hover > ul {
+    display: block;
+}
+
+.nav > li > ul > li > a {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    width: 10em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.nav > li > ul > li:hover > a {
+    background-color: #eee !important;
+    color: #0078d7 !important;
+}
+
+.nav > li > ul > li > ul {
+    left: 100%;
+    top: 0;
+}
+
+.nav > li:last-child > ul > li > ul {
+    left: -100%;
+    top: 0;
+}
+
+.nav > li > ul > li:hover > ul {
+    display: block;
+}
+
+.nav > li > ul > li > ul > li > a {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    width: 10em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.nav > li > ul > li > ul > li:hover > a {
+    background-color: #eee !important;
+    color: #0078d7 !important;
+}

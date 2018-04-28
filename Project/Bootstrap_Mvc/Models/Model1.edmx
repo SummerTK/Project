@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TestDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserPhone" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="UserEmail" Type="nvarchar" MaxLength="30" />
+          <Property Name="UserQQ" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“TestData.dbo.View_User”中的列“表说明”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“TestData.dbo.View_User”中的列“字段说明”。
+警告 6002: 表/视图“TestData.dbo.View_User”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="View_User">
+          <Key>
+            <PropertyRef Name="表名" />
+            <PropertyRef Name="标识" />
+            <PropertyRef Name="主键" />
+            <PropertyRef Name="占用字节数" />
+            <PropertyRef Name="小数位数" />
+            <PropertyRef Name="允许空" />
+            <PropertyRef Name="默认值" />
+          </Key>
+          <Property Name="表名" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="字段序号" Type="smallint" />
+          <Property Name="字段名" Type="nvarchar" MaxLength="128" />
+          <Property Name="标识" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="主键" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="类型" Type="nvarchar" MaxLength="128" />
+          <Property Name="占用字节数" Type="smallint" Nullable="false" />
+          <Property Name="长度" Type="int" />
+          <Property Name="小数位数" Type="int" Nullable="false" />
+          <Property Name="允许空" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="默认值" Type="nvarchar" MaxLength="4000" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TestDataModelStoreContainer">
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_User" EntityType="Self.View_User" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_User].[表名] AS [表名], 
+    [View_User].[字段序号] AS [字段序号], 
+    [View_User].[字段名] AS [字段名], 
+    [View_User].[标识] AS [标识], 
+    [View_User].[主键] AS [主键], 
+    [View_User].[类型] AS [类型], 
+    [View_User].[占用字节数] AS [占用字节数], 
+    [View_User].[长度] AS [长度], 
+    [View_User].[小数位数] AS [小数位数], 
+    [View_User].[允许空] AS [允许空], 
+    [View_User].[默认值] AS [默认值]
+    FROM [dbo].[View_User] AS [View_User]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserPwd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserPhone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserEmail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="UserQQ" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="TestDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="View_User" EntityType="TestDataModel.View_User" />
+        </EntityContainer>
+        <EntityType Name="View_User">
+          <Key>
+            <PropertyRef Name="表名" />
+            <PropertyRef Name="标识" />
+            <PropertyRef Name="主键" />
+            <PropertyRef Name="占用字节数" />
+            <PropertyRef Name="小数位数" />
+            <PropertyRef Name="允许空" />
+            <PropertyRef Name="默认值" />
+          </Key>
+          <Property Name="表名" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="字段序号" Type="Int16" />
+          <Property Name="字段名" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="标识" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="主键" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="类型" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="占用字节数" Type="Int16" Nullable="false" />
+          <Property Name="长度" Type="Int32" />
+          <Property Name="小数位数" Type="Int32" Nullable="false" />
+          <Property Name="允许空" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="默认值" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestDataModelStoreContainer" CdmEntityContainer="TestDataEntities">
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="TestDataModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="UserQQ" ColumnName="UserQQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_User">
+            <EntityTypeMapping TypeName="TestDataModel.View_User">
+              <MappingFragment StoreEntitySet="View_User">
+                <ScalarProperty Name="默认值" ColumnName="默认值" />
+                <ScalarProperty Name="允许空" ColumnName="允许空" />
+                <ScalarProperty Name="小数位数" ColumnName="小数位数" />
+                <ScalarProperty Name="长度" ColumnName="长度" />
+                <ScalarProperty Name="占用字节数" ColumnName="占用字节数" />
+                <ScalarProperty Name="类型" ColumnName="类型" />
+                <ScalarProperty Name="主键" ColumnName="主键" />
+                <ScalarProperty Name="标识" ColumnName="标识" />
+                <ScalarProperty Name="字段名" ColumnName="字段名" />
+                <ScalarProperty Name="字段序号" ColumnName="字段序号" />
+                <ScalarProperty Name="表名" ColumnName="表名" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

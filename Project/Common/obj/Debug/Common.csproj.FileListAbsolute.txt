@@ -1,0 +1,11 @@
+C:\Users\Less\Documents\GitHub\Project\Project\Common\bin\Debug\Common.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Common\bin\Debug\Common.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Common\bin\Debug\NPOI.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Common\bin\Debug\NPOI.OOXML.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Common\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Common\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Common\obj\Debug\Common.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Common\obj\Debug\Common.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Common\bin\Debug\ICSharpCode.SharpZipLib.dll

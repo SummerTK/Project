@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestDataModelStoreContainer" CdmEntityContainer="TestDataEntities">
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TestDataModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserQQ" ColumnName="UserQQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_User">
+      <EntityTypeMapping TypeName="TestDataModel.View_User">
+        <MappingFragment StoreEntitySet="View_User">
+          <ScalarProperty Name="默认值" ColumnName="默认值" />
+          <ScalarProperty Name="允许空" ColumnName="允许空" />
+          <ScalarProperty Name="小数位数" ColumnName="小数位数" />
+          <ScalarProperty Name="长度" ColumnName="长度" />
+          <ScalarProperty Name="占用字节数" ColumnName="占用字节数" />
+          <ScalarProperty Name="类型" ColumnName="类型" />
+          <ScalarProperty Name="主键" ColumnName="主键" />
+          <ScalarProperty Name="标识" ColumnName="标识" />
+          <ScalarProperty Name="字段名" ColumnName="字段名" />
+          <ScalarProperty Name="字段序号" ColumnName="字段序号" />
+          <ScalarProperty Name="表名" ColumnName="表名" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

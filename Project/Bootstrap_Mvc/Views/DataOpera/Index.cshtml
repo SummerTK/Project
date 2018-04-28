@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+   
+    <link href="~/Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />@*bootstrap样式*@
+  
+    <link href="~/Plugins/bootstrap/css/bootstrap-table.min.css" rel="stylesheet" />@*bootstrap_table样式*@
+
+    <script src="~/Plugins/jquery-1.9.1.min.js"></script>@*jq版本文件*@
+
+    <script src="~/Plugins/bootstrap/js/bootstrap.min.js"></script>@*bootstrap jq文件*@
+
+    <script src="~/Plugins/bootstrap/js/bootstrap-table.js"></script>@*bootstrap_table jq文件*@
+
+    <script src="~/Plugins/bootstrap/js/bootstrap-table-zh-CN.min.js"></script> @*bootstrap_table语言包 jq文件*@
+
+    <script src="~/Plugins/bootstrap/js/bootstrap-table-toolbar.js"></script>
+
+    <script src="~/Plugins/bootstrap/js/bootstrap-table-export.js"></script>
+
+    <script src="~/Plugins/bootstrap/js/bootstrap-table-filter-control.js"></script>
+
+    <script src="~/Plugins/bootstrap/js/tableExport.js"></script>
+
+    <script src="~/Plugins/layer/layer.js"></script>@*弹出框 jq文件*@
+
+    <script src="~/js/DataOperaIndex.js"></script>@*自定义 jq文件*@
+
+    <style type="text/css">
+        img {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="toolbar">
+        <img src="~/Images/Department/Icon/leading-in.png" class="img-bt-employee" onclick="ImportEmployee()" />
+        <a href="~/DataOpera/ETemplate"><img src="~/Images/Department/Icon/download.png" class="img-bt-employee" /></a>
+        <form style="display:none;">
+            <input name="EFile" type="file" id="EFile" onchange="EUpload()" />
+        </form>
+    </div>
+    <table id="employeeTable"></table>
+</body>
+</html>

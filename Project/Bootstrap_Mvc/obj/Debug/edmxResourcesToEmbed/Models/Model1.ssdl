@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserPwd" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserPhone" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="UserEmail" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserQQ" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“TestData.dbo.View_User”中的列“表说明”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“TestData.dbo.View_User”中的列“字段说明”。
+警告 6002: 表/视图“TestData.dbo.View_User”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="View_User">
+    <Key>
+      <PropertyRef Name="表名" />
+      <PropertyRef Name="标识" />
+      <PropertyRef Name="主键" />
+      <PropertyRef Name="占用字节数" />
+      <PropertyRef Name="小数位数" />
+      <PropertyRef Name="允许空" />
+      <PropertyRef Name="默认值" />
+    </Key>
+    <Property Name="表名" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="字段序号" Type="smallint" />
+    <Property Name="字段名" Type="nvarchar" MaxLength="128" />
+    <Property Name="标识" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="主键" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="类型" Type="nvarchar" MaxLength="128" />
+    <Property Name="占用字节数" Type="smallint" Nullable="false" />
+    <Property Name="长度" Type="int" />
+    <Property Name="小数位数" Type="int" Nullable="false" />
+    <Property Name="允许空" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="默认值" Type="nvarchar" MaxLength="4000" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TestDataModelStoreContainer">
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="View_User" EntityType="Self.View_User" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_User].[表名] AS [表名], 
+    [View_User].[字段序号] AS [字段序号], 
+    [View_User].[字段名] AS [字段名], 
+    [View_User].[标识] AS [标识], 
+    [View_User].[主键] AS [主键], 
+    [View_User].[类型] AS [类型], 
+    [View_User].[占用字节数] AS [占用字节数], 
+    [View_User].[长度] AS [长度], 
+    [View_User].[小数位数] AS [小数位数], 
+    [View_User].[允许空] AS [允许空], 
+    [View_User].[默认值] AS [默认值]
+    FROM [dbo].[View_User] AS [View_User]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

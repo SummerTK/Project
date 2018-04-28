@@ -1,5 +1,4 @@
 # Project
-Project
 Project——将功能做成DEMO，方便以后开发，节省开发时间成本。
 
 ——

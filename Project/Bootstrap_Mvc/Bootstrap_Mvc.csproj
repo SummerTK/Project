@@ -121,7 +121,6 @@
     <Content Include="Images\Department\Icon\swith copy.png" />
     <Content Include="Images\Department\Icon\swith.png" />
     <Content Include="Images\Department\Icon\unselect_All.png" />
-    <Content Include="js\DataIndex.js" />
     <Content Include="js\DataOperaIndex.js" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -211,6 +210,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Data\Index1.cshtml" />
+    <Content Include="Views\Data\Index2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

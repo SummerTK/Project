@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>内置参数</title>
+    <title>自定义参数</title>
     <link href="~/Plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Plugins/bootstrap/css/bootstrap-table.min.css" rel="stylesheet" />
     <script src="~/Plugins/jquery-1.9.1.min.js"></script>
@@ -21,15 +21,15 @@
     <script src="~/Plugins/bootstrap/js/tableExport.js"></script>
     <script type="text/javascript">
         $(function () {
-            //内置参数
-            Built_inTable_List();
+            //自定义参数
+            CustomizeTable_List();
         })
 
-        function Built_inTable_List() {
-            $('#Built_inTable').bootstrapTable('destroy');
-            $("#Built_inTable").bootstrapTable({
+        function CustomizeTable_List() {
+            $('#CustomizeTable').bootstrapTable('destroy');
+            $("#CustomizeTable").bootstrapTable({
                 method: 'get',//数据请求方式
-                url: '/Data/Built_inTableGetList',//请求数据的地址
+                url: '/Data/CustomizeTableList',//请求数据的地址
                 //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）     
                 cache: false,
                 //是否显示行间隔色
@@ -62,7 +62,7 @@
                 //导出所有
                 //exportdatatype: "all",
                 exporttypes: ['json', 'xml', 'csv', 'txt', 'sql', 'excel'],
-                //queryParams: queryParams,
+                queryParams: queryParams,
                 columns: [
                     {
                         field: 'id', align: 'center', valign: 'middle', checkbox: true,
@@ -82,9 +82,17 @@
             });
         }
 
-
+        function queryParams(params) {
+            return {
+                search: params.search,
+                limit: params.limit,
+                offset: params.offset,
+                order: params.order,
+                a: 1,
+                b: 2,
+            };
+        }
     </script>
-
 </head>
 <body>
     <h1>
@@ -96,7 +104,7 @@
         <span style="margin-left:20px;"></span>
         <a href="/DataOpera/Index">带导入页面</a>
     </h1>
-    <h1>内置参数</h1>
-    <table id="Built_inTable" style="font-size: 14px;"></table>
+    <h1>自定义参数</h1>
+    <table id="CustomizeTable" style="font-size: 14px;"></table>
 </body>
 </html>

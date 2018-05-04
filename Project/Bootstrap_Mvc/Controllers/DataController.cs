@@ -15,6 +15,16 @@ namespace Bootstrap_Mvc.Controllers
             return View();
         }
 
+        public ActionResult Index1()
+        {
+            return View();
+        }
+
+        public ActionResult Index2()
+        {
+            return View();
+        }
+
         #region 内置参数
         /// <summary>
         /// 数据

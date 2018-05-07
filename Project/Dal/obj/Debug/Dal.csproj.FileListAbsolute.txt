@@ -1,0 +1,8 @@
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\bin\Debug\Dal.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\bin\Debug\Dal.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\bin\Debug\Model.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\bin\Debug\Model.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\obj\Debug\Dal.csprojResolveAssemblyReference.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\obj\Debug\Dal.csproj.CoreCompileInputs.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\obj\Debug\Dal.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Dal\obj\Debug\Dal.pdb

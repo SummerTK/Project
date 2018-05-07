@@ -1,0 +1,10 @@
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\bin\Debug\Bll.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\bin\Debug\Bll.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\bin\Debug\Dal.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\bin\Debug\Model.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\bin\Debug\Dal.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\bin\Debug\Model.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\obj\Debug\Bll.csprojResolveAssemblyReference.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\obj\Debug\Bll.csproj.CoreCompileInputs.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\obj\Debug\Bll.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Bll\obj\Debug\Bll.pdb

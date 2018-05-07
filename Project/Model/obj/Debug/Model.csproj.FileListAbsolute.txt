@@ -1,0 +1,6 @@
+C:\Users\Less\Documents\GitHub\Project\Project\Model\bin\Debug\Model.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Model\bin\Debug\Model.pdb
+C:\Users\Less\Documents\GitHub\Project\Project\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Less\Documents\GitHub\Project\Project\Model\obj\Debug\Model.dll
+C:\Users\Less\Documents\GitHub\Project\Project\Model\obj\Debug\Model.pdb
